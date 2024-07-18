@@ -4,15 +4,14 @@ import { restaurants } from "../mock";
 import Title from "./Title";
 import Restaurant from "./Restaurant";
 import Layout from "./Layout";
+import RestaurantSection from "./RestaurantSection";
 
 const App = () => {
   return (
     <div>
       <Layout>
         <Title title="Restaurants" />
-        {restaurants.map(({ name, menu, reviews }) => (
-          <Restaurant name={name} menu={menu} reviews={reviews} />
-        ))}
+        <RestaurantSection />
       </Layout>
     </div>
   );
