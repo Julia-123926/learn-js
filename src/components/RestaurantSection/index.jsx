@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import { useState } from "react";
 import { restaurants } from "../../mock";
 import Restaurant from "../Restaurant";
 

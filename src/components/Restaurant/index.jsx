@@ -2,23 +2,24 @@ import Review from "../Review";
 import MenuItem from "../MenuItem";
 import PropTypes from "prop-types";
 import ReviewForm from "../ReviewForm";
+import "./styles.modules.css";
 
 const Restaurant = ({ restaurant }) => {
   if (!restaurant.name) {
     return null;
   }
   return (
-    <div>
-      <h3>{restaurant.name}</h3>
-      <h3>Menu</h3>
+    <div className="container">
+      <h3 className="heading">{restaurant.name}</h3>
+      <h3 className="subHeading">Menu</h3>
       <div>
         {restaurant.menu.map((item) => (
           <MenuItem key={item.id} name={item.name} />
         ))}
       </div>
-      <h3>Reviews</h3>
-      <div style={{ marginBottom: 20 }}>
-        {restaurant.reviews?.length &&
+      <h3 className="subHeading">Reviews</h3>
+      <div className="reviewContainer">
+        {!!restaurant.reviews?.length &&
           restaurant.reviews.map((review) => (
             <Review key={review.id} text={review.text} />
           ))}
