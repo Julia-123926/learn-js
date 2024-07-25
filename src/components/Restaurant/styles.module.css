@@ -27,3 +27,11 @@
 .reviewContainer {
   margin-bottom: 20px;
 }
+
+.light {
+  background-color: rgb(237, 207, 151);
+}
+
+.dark {
+  background-color: rgb(138, 138, 238);
+}

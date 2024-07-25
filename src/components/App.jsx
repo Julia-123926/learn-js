@@ -1,20 +1,21 @@
-/* eslint-disable no-unused-vars */
-import React, { useState } from "react";
-import { restaurants } from "../mock";
 import Title from "./Title";
-import Restaurant from "./Restaurant";
 import Layout from "./Layout";
 import RestaurantSection from "./RestaurantSection";
-import "../stylenull.css";
+import { ThemeContextProvider } from "./ThemeContext";
+import { AuthorizationContextProvider } from "./UserContext";
 
-const App = () => {
+export const App = () => {
   return (
-    <div>
-      <Layout>
-        <Title title="Restaurants" />
-        <RestaurantSection />
-      </Layout>
-    </div>
+    <AuthorizationContextProvider>
+      <ThemeContextProvider>
+        <div>
+          <Layout>
+            <Title title="Restaurants" />
+            <RestaurantSection />
+          </Layout>
+        </div>
+      </ThemeContextProvider>
+    </AuthorizationContextProvider>
   );
 };
 
