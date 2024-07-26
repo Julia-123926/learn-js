@@ -8,7 +8,6 @@ import { useTheme } from "../ThemeContext";
 
 const Restaurant = ({ restaurant }) => {
   const { value: themeValue } = useTheme();
-  // console.log(useTheme());
   if (!restaurant.name) {
     return null;
   }
