@@ -7,7 +7,6 @@ const ReviewForm = () => {
   const { name, text, rating } = form;
 
   const handleSave = () => {
-    console.log("Saved:", form);
     resetForm();
   };
 
