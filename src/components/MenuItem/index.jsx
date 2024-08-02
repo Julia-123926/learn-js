@@ -1,17 +1,23 @@
-import { useState } from "react";
-import CounterContainer from "../Counter/CounterContainer";
 import { useAuthorize } from "../UserContext";
+import RestaurantCartSection from "../RestaurantCartSection";
+import { useLocation, Link } from "react-router-dom";
 
-const MenuItem = ({ name }) => {
+const MenuItem = () => {
+  const location = useLocation();
+  const { dish, restaurantId } = location.state;
   const { value: authStatus } = useAuthorize();
-  const [value, setValue] = useState(0);
 
   return (
     <div>
-      {name}
+      {dish.name}{" "}
       {authStatus === "signOut" && (
-        <CounterContainer value={value} setValue={setValue} />
+        <div>
+          <RestaurantCartSection id={dish.name} />
+        </div>
       )}
+      <Link to={`/restaurants/${restaurantId}/menu`}>
+        <span>Back</span>
+      </Link>
     </div>
   );
 };
